@@ -18,6 +18,8 @@ class Piggy(PiggyParent):
         self.LEFT_DEFAULT = 80
         self.RIGHT_DEFAULT = 80
         self.MIDPOINT = 1500  # what servo command (1000-2000) is straight forward for your bot?
+        self.load_defaults()
+        
         
 
     def load_defaults(self):
@@ -53,7 +55,12 @@ class Piggy(PiggyParent):
     '''
 
     def dance(self):
-        print("I don't know how to dance. \nPlease give my programmer a zero.")
+        # HIGHER - ORDERED
+        for x in range(3):
+            self.do720()
+            self.reverseWheelie()
+            self.waive()
+            self.dab()
 
     def scan(self):
         """Sweep the servo and populate the scan_data dictionary"""
@@ -69,6 +76,23 @@ class Piggy(PiggyParent):
         print("-------- [ Press CTRL + C to stop me ] --------\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("Wait a second. \nI can't navigate the maze at all. Please give my programmer a zero.")
+
+# does two full circles
+    def do720(self):
+        pass
+    
+# rapidly reverses then accelerates so that it can pop a reverse wheelie
+    def reverseWheelie(self):
+        pass
+
+# turn the servo back and forth
+    def waive(self):
+        pass
+
+# turn the servo the opposite direction of the robot
+    def dab(self):
+        pass
+    
 
 
 
