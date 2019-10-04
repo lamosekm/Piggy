@@ -1,5 +1,6 @@
 from teacher import PiggyParent
 import sys
+import time
 
 class Piggy(PiggyParent):
 
@@ -55,12 +56,16 @@ class Piggy(PiggyParent):
     '''
 
     def dance(self):
-        # HIGHER - ORDERED
-        for x in range(3):
-            self.do720()
-            self.reverseWheelie()
-            self.waive()
-            self.dab()
+        self.your_move()
+        
+
+    def your_move(self):
+        self.right()
+        time.sleep(5)
+        self.stop()
+        self.left()
+        self.sleep(5)
+        self.stop()
 
     def scan(self):
         """Sweep the servo and populate the scan_data dictionary"""
