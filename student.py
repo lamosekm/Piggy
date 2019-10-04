@@ -61,10 +61,10 @@ class Piggy(PiggyParent):
 
     def your_move(self):
         self.right()
-        time.sleep(5)
+        time.sleep(.25)
         self.stop()
         self.left()
-        self.sleep(5)
+        time.sleep(.25)
         self.stop()
 
     def scan(self):
