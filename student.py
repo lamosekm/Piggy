@@ -56,11 +56,11 @@ class Piggy(PiggyParent):
     '''
 
     def dance(self):
-        self.your_move()
+        self.warmupPerformance()
         self.do720()
-        
+        self.reverseWheelie()
 
-    def your_move(self):
+    def warmupPerformance(self):
         self.right()
         time.sleep(2)
         self.stop()
@@ -104,7 +104,11 @@ class Piggy(PiggyParent):
     
 # rapidly reverses then accelerates so that it can pop a reverse wheelie
     def reverseWheelie(self):
-        pass
+        self.fwd()
+        time.sleep(.5)
+        self.back()
+        time.sleep(3)
+        self.stop
 
 # turn the servo back and forth
     def waive(self):
