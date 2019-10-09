@@ -105,10 +105,10 @@ class Piggy(PiggyParent):
 # rapidly reverses then accelerates so that it can pop a reverse wheelie
     def reverseWheelie(self):
         self.fwd()
-        time.sleep(.5)
+        time.sleep(.1)
         self.back()
-        time.sleep(3)
-        self.stop
+        time.sleep(.5)
+        self.stop()
 
 # turn the servo back and forth
     def waive(self):
