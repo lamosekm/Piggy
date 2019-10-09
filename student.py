@@ -63,6 +63,9 @@ class Piggy(PiggyParent):
         self.right()
         time.sleep(2)
         self.stop()
+        self.left()
+        time.sleep(2)
+        self.stop()
 
 
     def scan(self):
