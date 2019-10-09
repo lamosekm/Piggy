@@ -74,6 +74,9 @@ class Piggy(PiggyParent):
         time.sleep(4)
         self.stop()
         self.servo(1200)
+        time.sleep(1)
+        self.servo(1700)
+        time.sleep(1)
 
 
 
