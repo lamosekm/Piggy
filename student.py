@@ -57,6 +57,7 @@ class Piggy(PiggyParent):
 
     def dance(self):
         self.your_move()
+        self.do720()
         
 
     def your_move(self):
@@ -68,7 +69,11 @@ class Piggy(PiggyParent):
         self.stop()
         self.right()
         time.sleep(.25)
-        self.stop
+        self.stop()
+        self.fwd()
+        time.sleep(4)
+        self.stop()
+        self.servo(1200)
 
 
 
@@ -90,7 +95,9 @@ class Piggy(PiggyParent):
 
 # does two full circles
     def do720(self):
-        pass
+        self.right()
+        time.sleep(5)
+        self.stop()
     
 # rapidly reverses then accelerates so that it can pop a reverse wheelie
     def reverseWheelie(self):
