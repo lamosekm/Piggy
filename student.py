@@ -126,9 +126,10 @@ class Piggy(PiggyParent):
         self.stop()
 
     def wrecklessDabs(self):
-        while True:
+        for x in range(5):
             self.right()
-            time.sleep()
+            time.sleep(.5)
+            self.stop
             self.servo(1000)
             self.stop()
     
