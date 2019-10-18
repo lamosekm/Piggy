@@ -113,8 +113,8 @@ class Piggy(PiggyParent):
         time.sleep(.5)
         self.stop()
 
-# turn the servo back and forth
     def waive(self):
+        """fast waives"""
         self.servo(1000)
         self.servo(2000)
         self.servo(1000)
@@ -126,7 +126,8 @@ class Piggy(PiggyParent):
         self.stop()
 
     def wrecklessDabs(self):
-        for x in range(5):
+        """does tons of dabs(21 to be exact)"""
+        for x in range(21):
             self.right()
             time.sleep(.5)
             self.servo(2000)
@@ -135,6 +136,7 @@ class Piggy(PiggyParent):
             time.sleep(.5)
             self.servo(1000)
             self.stop()
+            
     
 
 
