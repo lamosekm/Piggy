@@ -56,11 +56,14 @@ class Piggy(PiggyParent):
     '''
 
     def dance(self):
-        self.warmupPerformance()
-        self.do720()
-        self.reverseWheelie()
+        self.warmupPerformance() #calls warmup dance
+        self.do720() # calls second dance
+        self.reverseWheelie() # calls third dance
+        self.waive() # calls waive method/dance
+        self.wrecklessDabs() # finishes with the final performance.
 
     def warmupPerformance(self):
+        """a nice little warmup to the insane performance!"""
         self.right()
         time.sleep(2)
         self.stop()
@@ -96,14 +99,14 @@ class Piggy(PiggyParent):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("Wait a second. \nI can't navigate the maze at all. Please give my programmer a zero.")
 
-# does two full circles
     def do720(self):
+        """does two full circles"""
         self.right()
         time.sleep(5)
         self.stop()
     
-# rapidly reverses then accelerates so that it can pop a reverse wheelie
     def reverseWheelie(self):
+        """attempts to do a reverse wheelie... motors don't have enough power"""
         self.fwd()
         time.sleep(.1)
         self.back()
@@ -112,11 +115,22 @@ class Piggy(PiggyParent):
 
 # turn the servo back and forth
     def waive(self):
-        pass
+        self.servo(1000)
+        self.servo(2000)
+        self.servo(1000)
+        self.servo(2000)
+        self.servo(1000)
+        self.servo(2000)
+        self.servo(1000)
+        self.servo(2000)
+        self.stop()
 
-# turn the servo the opposite direction of the robot
-    def dab(self):
-        pass
+    def wrecklessDabs(self):
+        while True:
+            self.right()
+            time.sleep()
+            self.servo(1000)
+            self.stop()
     
 
 
