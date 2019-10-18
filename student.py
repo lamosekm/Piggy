@@ -129,8 +129,7 @@ class Piggy(PiggyParent):
         for x in range(5):
             self.right()
             time.sleep(.5)
-            self.stop
-            self.servo(1000)
+            self.servo(2000)
             self.stop()
     
 
