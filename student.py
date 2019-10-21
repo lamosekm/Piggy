@@ -115,15 +115,16 @@ class Piggy(PiggyParent):
 
     def waive(self):
         """fast waives"""
-        self.servo(1000)
-        self.servo(2000)
-        self.servo(1000)
-        self.servo(2000)
-        self.servo(1000)
-        self.servo(2000)
-        self.servo(1000)
-        self.servo(2000)
-        self.stop()
+        for x in range(3):
+            self.servo(1000)
+            self.servo(2000)
+            self.servo(1000)
+            self.servo(2000)
+            self.servo(1000)
+            self.servo(2000)
+            self.servo(1000)
+            self.servo(2000)
+            self.stop()
 
     def wrecklessDabs(self):
         """does tons of dabs(21 to be exact)"""
@@ -132,9 +133,15 @@ class Piggy(PiggyParent):
             time.sleep(.5)
             self.servo(2000)
             self.stop()
+            self.back()
+            time.sleep(.5)
+            self.stop()
             self.left()
             time.sleep(.5)
             self.servo(1000)
+            self.stop()
+            self.back()
+            time.sleep(.5)
             self.stop()
             
     
