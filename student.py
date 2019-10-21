@@ -57,7 +57,7 @@ class Piggy(PiggyParent):
 
     def dance(self):
         self.warmupPerformance() #calls warmup dance
-        self.do720() # calls second dance
+        self.doCircles() # calls second dance
         self.reverseWheelie() # calls third dance
         self.waive() # calls waive method/dance
         self.wrecklessDabs() # finishes with the final performance.
@@ -99,7 +99,7 @@ class Piggy(PiggyParent):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("Wait a second. \nI can't navigate the maze at all. Please give my programmer a zero.")
 
-    def do720(self):
+    def doCircles(self):
         """does two full circles"""
         self.right()
         time.sleep(5)
