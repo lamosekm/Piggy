@@ -175,16 +175,16 @@ class Piggy(PiggyParent):
         """turns by 90 deg and drives to form a box"""
         self.fwd()
         time.sleep(.5)
-        turn_by_deg(90)
+        self.turn_by_deg(90)
         self.fwd()
         time.sleep(.5)
-        turn_by_deg(90)
+        self.turn_by_deg(90)
         self.fwd()
         time.sleep(.5)
-        turn_by_deg(90)
+        self.turn_by_deg(90)
         self.fwd()
         time.sleep(.5)
-        turn_by_deg(90)
+        self.turn_by_deg(90)
         
             
     
