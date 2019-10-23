@@ -67,6 +67,7 @@ class Piggy(PiggyParent):
         self.reverseWheelieFail() # calls third dance
         self.waive() # calls waive method/dance
         self.wrecklessDabs() # finishes with the final performance.
+        self.smallBox() # drives a box
 
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe to dance"""
@@ -133,7 +134,7 @@ class Piggy(PiggyParent):
 
     def waive(self):
         """fast waives"""
-        for x in range(15):
+        for x in range(5):
             self.servo(1000)
             time.sleep(.2)
             self.servo(2000)
@@ -169,6 +170,21 @@ class Piggy(PiggyParent):
             self.back()
             time.sleep(.5)
             self.stop()
+
+    def smallBox(self):
+        """turns by 90 deg and drives to form a box"""
+        self.forward()
+        time.sleep(.5)
+        turn_by_deg(90)
+        self.forward()
+        time.sleep(.5)
+        turn_by_deg(90)
+        self.forward()
+        time.sleep(.5)
+        turn_by_deg(90)
+        self.forward()
+        time.sleep(.5)
+        turn_by_deg(90)
         
             
     
