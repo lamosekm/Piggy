@@ -134,7 +134,7 @@ class Piggy(PiggyParent):
 
     def waive(self):
         """fast waives"""
-        for x in range(5):
+        for x in range(3):
             self.servo(1000)
             time.sleep(.2)
             self.servo(2000)
@@ -173,16 +173,16 @@ class Piggy(PiggyParent):
 
     def smallBox(self):
         """turns by 90 deg and drives to form a box"""
-        self.forward()
+        self.fwd()
         time.sleep(.5)
         turn_by_deg(90)
-        self.forward()
+        self.fwd()
         time.sleep(.5)
         turn_by_deg(90)
-        self.forward()
+        self.fwd()
         time.sleep(.5)
         turn_by_deg(90)
-        self.forward()
+        self.fwd()
         time.sleep(.5)
         turn_by_deg(90)
         
