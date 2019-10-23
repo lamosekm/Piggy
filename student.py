@@ -64,7 +64,7 @@ class Piggy(PiggyParent):
             print("It's safe to dance!")
         self.warmupPerformance() #calls warmup dance
         self.doCircles() # calls second dance
-        self.reverseWheelie() # calls third dance
+        self.reverseWheelieFail() # calls third dance
         self.waive() # calls waive method/dance
         self.wrecklessDabs() # finishes with the final performance.
 
@@ -123,7 +123,7 @@ class Piggy(PiggyParent):
         time.sleep(5)
         self.stop()
     
-    def reverseWheelie(self):
+    def reverseWheelieFail(self):
         """attempts to do a reverse wheelie... motors don't have enough power"""
         self.fwd()
         time.sleep(.1)
@@ -133,7 +133,7 @@ class Piggy(PiggyParent):
 
     def waive(self):
         """fast waives"""
-        for x in range(3):
+        for x in range(15):
             self.servo(1000)
             self.servo(2000)
             self.servo(1000)
@@ -145,8 +145,8 @@ class Piggy(PiggyParent):
             self.stop()
 
     def wrecklessDabs(self):
-        """does tons of dabs(21 to be exact)"""
-        for x in range(21):
+        """does tons of dabs(7 to be exact)"""
+        for x in range(7):
             self.right()
             time.sleep(.5)
             self.servo(2000)
