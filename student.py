@@ -56,11 +56,29 @@ class Piggy(PiggyParent):
     '''
 
     def dance(self):
+        # check to see it's safe
+        if not self.safe_to_dance():
+            print("Not cool. Not going to dance")
+            return # return closes down the method
+        else:
+            print("It's safe to dance!")
         self.warmupPerformance() #calls warmup dance
         self.doCircles() # calls second dance
         self.reverseWheelie() # calls third dance
         self.waive() # calls waive method/dance
         self.wrecklessDabs() # finishes with the final performance.
+
+    def safe_to_dance(self):
+        """ Does a 360 distance check and returns true if safe to dance"""
+        for x in range(4):
+            for ang in range(self.MIDPOINT-400, self.MIDPOINT+400, 100): 
+                self.servo(ang)
+                time.sleep(.1)
+                if self.read_distance() < 250:
+                    return False
+            self.turn_by_deg(90)
+        return True
+
 
     def warmupPerformance(self):
         """a nice little warmup to the insane performance!"""
