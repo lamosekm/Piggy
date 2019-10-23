@@ -135,13 +135,21 @@ class Piggy(PiggyParent):
         """fast waives"""
         for x in range(15):
             self.servo(1000)
+            time.sleep(.2)
             self.servo(2000)
+            time.sleep(.2)
             self.servo(1000)
+            time.sleep(.2)
             self.servo(2000)
+            time.sleep(.2)
             self.servo(1000)
+            time.sleep(.2)
             self.servo(2000)
+            time.sleep(.2)
             self.servo(1000)
+            time.sleep(.2)
             self.servo(2000)
+            time.sleep(.2)
             self.stop()
 
     def wrecklessDabs(self):
