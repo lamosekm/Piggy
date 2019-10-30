@@ -124,7 +124,7 @@ class Piggy(PiggyParent):
                 found_something = False
                 print("I have a clear view. Resetting my counter")
         self.stop()
-        print("I found this many things: %d % count)
+        print("I found this many things: %d" % count)
         return count
 
     def nav(self):
