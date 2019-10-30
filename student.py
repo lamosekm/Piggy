@@ -135,7 +135,7 @@ class Piggy(PiggyParent):
         while self.read_distance() > 250:
             self.fwd()
             time.sleep(.01)
-        self.stop
+        self.stop()
 
     def doCircles(self):
         """does two full circles"""
