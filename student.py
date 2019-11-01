@@ -136,8 +136,10 @@ class Piggy(PiggyParent):
             while self.read_distance() > 250:
                 self.fwd()
                 time.sleep(.01)
+            self.stop()
             self.shakeHeadInDisgust()
             self.turn_by_deg(45)
+            self.fwd()
 
     def shakeHeadInDisgust(self):
         """Goes around an object that is in front of it"""
@@ -146,6 +148,7 @@ class Piggy(PiggyParent):
             time.sleep(.4)
             self.servo(2000)
             time.sleep(.4)
+        self.servo(1500)
 
     def doCircles(self):
         """does two full circles"""
