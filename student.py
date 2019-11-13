@@ -112,7 +112,7 @@ class Piggy(PiggyParent):
     def obstacle_count(self):
         """Does a 360 scan and returns the number of obstacles it sees"""
         found_something = False # trigger
-        trigger_distance = 250
+        trigger_distance = 350
         count = 0
         starting_position = self.get_heading() # write down starting position
         self.right(primary=60, counter=-60)
@@ -162,7 +162,7 @@ class Piggy(PiggyParent):
 
     def shakeHeadInDisgust(self):
         """Goes around an object that is in front of it"""
-        if self.read_distance() < 250:
+        if self.read_distance() < 350:
             self.servo(1000)
             time.sleep(.4)
             self.servo(2000)
