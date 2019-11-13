@@ -16,8 +16,8 @@ class Piggy(PiggyParent):
         ''' 
         MAGIC NUMBERS <-- where we hard-code our settings
         '''
-        self.LEFT_DEFAULT = 80
-        self.RIGHT_DEFAULT = 80
+        self.LEFT_DEFAULT = 90
+        self.RIGHT_DEFAULT = 90
         self.MIDPOINT = 1500  # what servo command (1000-2000) is straight forward for your bot?
         self.load_defaults()
         
@@ -112,7 +112,7 @@ class Piggy(PiggyParent):
     def obstacle_count(self):
         """Does a 360 scan and returns the number of obstacles it sees"""
         found_something = False # trigger
-        trigger_distance = 350
+        trigger_distance = 250
         count = 0
         starting_position = self.get_heading() # write down starting position
         self.right(primary=60, counter=-60)
