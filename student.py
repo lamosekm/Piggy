@@ -156,7 +156,7 @@ class Piggy(PiggyParent):
             self.cornerCount += 1
             self.shakeHeadInDisgust()
             if self.cornerCount == 4:
-                self.turn_by_deg(180)
+                self.turn_by_deg(90)
             self.scan()            
             #traversal
             left_total = 0
