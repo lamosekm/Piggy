@@ -22,6 +22,7 @@ class Piggy(PiggyParent):
         self.SAFE_DIST = 350
         self.MIDPOINT = 1500  # what servo command (1000-2000) is straight forward for your bot?
         self.load_defaults()
+        self.cornerCount = 0
         
         
 
@@ -114,7 +115,7 @@ class Piggy(PiggyParent):
     def obstacle_count(self):
         """Does a 360 scan and returns the number of obstacles it sees"""
         found_something = False # trigger
-        trigger_distance = 250
+        trigger_distance = 350
         count = 0
         starting_position = self.get_heading() # write down starting position
         self.right(primary=60, counter=-60)
@@ -148,10 +149,14 @@ class Piggy(PiggyParent):
         while True:
             self.servo(self.MIDPOINT)
             while self.quick_check():
+                self.cornerCount = 0
                 self.fwd()
                 time.sleep(.01)
             self.stop()
+            self.cornerCount += 1
             self.shakeHeadInDisgust()
+            if self.cornerCount == 4:
+                self.turn_by_deg(180)
             self.scan()            
             #traversal
             left_total = 0
@@ -171,7 +176,6 @@ class Piggy(PiggyParent):
                 self.turn_by_deg(-35)
             else:
                 self.turn_by_deg(35)
-
 
     def shakeHeadInDisgust(self):
         """Goes around an object that is in front of it"""
