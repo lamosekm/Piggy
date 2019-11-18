@@ -23,6 +23,7 @@ class Piggy(PiggyParent):
         self.MIDPOINT = 1500  # what servo command (1000-2000) is straight forward for your bot?
         self.load_defaults()
         self.cornerCount = 0
+        self.exit_heading = 0
         
         
 
@@ -141,11 +142,17 @@ class Piggy(PiggyParent):
         #if I get to the end, this means I didn't find anything dangerous 
         return True
 
+
+
     def nav(self):
+
+        self.exit_heading = self.get_heading()
+
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("-------- [ Press CTRL + C to stop me ] --------\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("Wait a second. \nI can't navigate the maze at all. Please give my programmer a zero.")
+
         while True:
             self.servo(self.MIDPOINT)
             while self.quick_check():
@@ -156,7 +163,7 @@ class Piggy(PiggyParent):
             self.cornerCount += 1
             self.shakeHeadInDisgust()
             if self.cornerCount == 4:
-                self.turn_by_deg(90)
+                self.escape()
             self.scan()            
             #traversal
             left_total = 0
@@ -176,6 +183,11 @@ class Piggy(PiggyParent):
                 self.turn_by_deg(-35)
             else:
                 self.turn_by_deg(35)
+
+    def escape(self):
+        self.turn_by_deg(180)
+        self.deg_fwd(720)
+        self.turn_to_deg(self.exit_heading)
 
     def shakeHeadInDisgust(self):
         """Goes around an object that is in front of it"""
