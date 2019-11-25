@@ -186,7 +186,11 @@ class Piggy(PiggyParent):
 
     def escape(self):
         self.turn_by_deg(180)
-        self.deg_fwd(720)
+        self.fwd()
+        time.sleep(1)
+        self.turn_by_deg(-90)
+        self.fwd()
+        time.sleep(1)
         self.turn_to_deg(self.exit_heading)
 
     def shakeHeadInDisgust(self):
