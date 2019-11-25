@@ -19,7 +19,7 @@ class Piggy(PiggyParent):
         self.LEFT_DEFAULT = 100
         self.RIGHT_DEFAULT = 100
         # PRO LEVEL
-        self.SAFE_DIST = 350
+        self.SAFE_DIST = 450
         self.MIDPOINT = 1500  # what servo command (1000-2000) is straight forward for your bot?
         self.load_defaults()
         self.cornerCount = 0
@@ -116,7 +116,7 @@ class Piggy(PiggyParent):
     def obstacle_count(self):
         """Does a 360 scan and returns the number of obstacles it sees"""
         found_something = False # trigger
-        trigger_distance = 350
+        trigger_distance = 450
         count = 0
         starting_position = self.get_heading() # write down starting position
         self.right(primary=60, counter=-60)
