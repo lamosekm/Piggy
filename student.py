@@ -42,6 +42,7 @@ class Piggy(PiggyParent):
         menu = {"n": ("Navigate", self.nav),
                 "d": ("Dance", self.dance),
                 "o": ("Obstacle count", self.obstacle_count),
+                "h": ("Hold position", self.hold_position),
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit)
                 }
@@ -152,7 +153,15 @@ class Piggy(PiggyParent):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("Wait a second. \nI can't navigate the maze at all. Please give my programmer a zero.")
 
-def path_towards_exit(self):
+    def hold_steady(self):
+        angle_started_at = self.get_heading()
+        while True:
+            time.sleep(.1)
+            current_angle = self.getheading()
+            if current_angle != angle_started_at:
+                self.turn_to_deg(self.angle_started_at)
+
+    def path_towards_exit(self):
         self.exit_heading = self.get_heading() 
         self.turn_to_deg(self.exit_heading)
         if self.quick_check():
