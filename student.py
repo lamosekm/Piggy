@@ -158,8 +158,8 @@ class Piggy(PiggyParent):
         while True:
             time.sleep(.1)
             current_angle = self.get_heading()
-            if current_angle != angle_started_at:
-                self.turn_to_deg(self.angle_started_at)
+            if abs(current_angle - angle_started_at) > 10:
+                self.turn_to_deg(angle_started_at)
 
     def path_towards_exit(self):
         self.exit_heading = self.get_heading() 
