@@ -46,8 +46,8 @@ class Piggy(PiggyParent):
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
                 "i": ("forward", self.go),
-                "j": ("left", self.left),
-                "l": ("right", self.right),
+                "j": ("left", self.go_left),
+                "l": ("right", self.go_right),
                 "k": ("back", self.reverse)
                 }
 
@@ -70,12 +70,12 @@ class Piggy(PiggyParent):
         time.sleep(.25)
         self.stop()
 
-    def left(self):
+    def go_left(self):
         print("jdsaflkdsajfds")
         self.turn_by_deg(-45)
 
 
-    def right(self):
+    def go_right(self):
         self.turn_by_deg(45)
 
     def reverse(self):
