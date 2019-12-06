@@ -67,7 +67,7 @@ class Piggy(PiggyParent):
 
     def go(self):
         self.fwd()
-        time.sleep(1)
+        time.sleep(.75)
         self.stop()
 
     def go_left(self):
@@ -80,7 +80,7 @@ class Piggy(PiggyParent):
 
     def reverse(self):
         self.back()
-        time.sleep(.1)
+        time.sleep(.75)
         self.stop()
 
     def dance(self):
