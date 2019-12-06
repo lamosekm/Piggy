@@ -44,8 +44,13 @@ class Piggy(PiggyParent):
                 "o": ("Obstacle count", self.obstacle_count),
                 "h": ("Hold position", self.hold_steady),
                 "c": ("Calibrate", self.calibrate),
-                "q": ("Quit", self.quit)
+                "q": ("Quit", self.quit),
+                "i": ("forward", self.go),
+                "j": ("left", self.left),
+                "l": ("right", self.right),
+                "k": ("back", self.reverse)
                 }
+
         # loop and print the menu...
         for key in sorted(menu.keys()):
             print(key + ":" + menu[key][0])
@@ -59,6 +64,22 @@ class Piggy(PiggyParent):
     STUDENT PROJECTS
     ****************
     '''
+
+    def go(self):
+        self.fwd()
+        time.sleep(.25)
+        self.stop()
+
+    def left(self):
+        self.turn_by_deg(-45)
+
+    def right(self):
+        self.turn_by_deg(45)
+
+    def reverse(self):
+        self.back()
+        time.sleep(.25)
+        self.stop()
 
     def dance(self):
         # check to see it's safe
@@ -154,6 +175,7 @@ class Piggy(PiggyParent):
         print("Wait a second. \nI can't navigate the maze at all. Please give my programmer a zero.")
         corner_count=0
         while True:
+            self.hold_steady()
             self.servo(self.MIDPOINT)
             while self.quick_check():
                 self.cornerCount = 0
