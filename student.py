@@ -71,7 +71,9 @@ class Piggy(PiggyParent):
         self.stop()
 
     def left(self):
+        print("jdsaflkdsajfds")
         self.turn_by_deg(-45)
+
 
     def right(self):
         self.turn_by_deg(45)
