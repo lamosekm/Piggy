@@ -158,7 +158,7 @@ class Piggy(PiggyParent):
         while True:
             time.sleep(.1)
             current_angle = self.get_heading()
-            if abs(current_angle - angle_started_at) > 10:
+            if abs(current_angle - angle_started_at) > 15:
                 self.turn_to_deg(angle_started_at)
 
     def path_towards_exit(self):
@@ -168,7 +168,7 @@ class Piggy(PiggyParent):
             return True
         else:
             self.turn_to_deg(where_I_started)
-        return False            
+        return False
     
     def average_turn(self):
         '''robot decides where an obstacle is and turns left or right from that '''
