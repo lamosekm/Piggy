@@ -55,7 +55,7 @@ class Piggy(PiggyParent):
                 "a": ("slightlyLeft", self.slightlyLeft),
                 "f": ("right", self.go_right),
                 "v": ("slighltyRight", self.slightlyRight),
-                "d": ("back", self.reverse)
+                "g": ("back", self.reverse)
                 }
 
 
