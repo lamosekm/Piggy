@@ -45,15 +45,17 @@ class Piggy(PiggyParent):
         # Please feel free to change the menu and add options.
         print("\n *** MENU ***") 
         menu = {"n": ("Navigate", self.nav),
-                "d": ("Dance", self.dance),
+                "o": ("Dance", self.dance),
                 "o": ("Obstacle count", self.obstacle_count),
                 "h": ("Hold position", self.hold_steady),
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
-                "i": ("forward", self.go),
-                "j": ("left", self.go_left),
-                "l": ("right", self.go_right),
-                "k": ("back", self.reverse)
+                "e": ("forward", self.go),
+                "s": ("left", self.go_left),
+                "a": ("slightlyLeft", self.slightlyLeft),
+                "f": ("right", self.go_right),
+                "v": ("slighltyRight", self.slightlyRight),
+                "d": ("back", self.reverse)
                 }
 
 
@@ -78,12 +80,17 @@ class Piggy(PiggyParent):
         self.stop()
 
     def go_left(self):
-        print("jdsaflkdsajfds")
         self.turn_by_deg(-45)
+
+    def slightlyLeft(self):
+        self.turn_by_deg(-22.5)
 
 
     def go_right(self):
         self.turn_by_deg(45)
+
+    def slightlyRight(self):
+        self.turn_by_deg(22.5)
 
     def reverse(self):
         self.back()
