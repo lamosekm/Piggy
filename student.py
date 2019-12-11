@@ -184,7 +184,7 @@ class Piggy(PiggyParent):
         print("Wait a second. \nI can't navigate the maze at all. Please give my programmer a zero.")
         corner_count=0
         while True:
-            self.hold_steady()
+            #self.hold_steady()
             self.servo(self.MIDPOINT)
             while self.quick_check():
                 self.cornerCount = 0
