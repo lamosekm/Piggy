@@ -75,9 +75,8 @@ class Piggy(PiggyParent):
     '''
 
     def go(self):
-        self.fwd()
-        time.sleep(.75)
-        self.stop()
+        while self.read_distance() < 200:
+            self.fwd()
 
     def go_left(self):
         self.turn_by_deg(-45)
