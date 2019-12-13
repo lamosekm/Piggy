@@ -75,7 +75,7 @@ class Piggy(PiggyParent):
     '''
 
     def go(self):
-        while self.read_distance() < 150:
+        while self.read_distance() > 150:
             self.fwd()
             time.sleep(.01)
         self.stop()
