@@ -75,14 +75,13 @@ class Piggy(PiggyParent):
     '''
 
     def go(self):
-        while True:
-            self.servo(self.MIDPOINT)
-            while self.quick_check():
-                self.fwd()
-                time.sleep(.01)
-            self.stop()
-            self.scan()
+        self.servo(self.MIDPOINT)
+        while self.quick_check():
+            self.fwd()
+            time.sleep(.01)
         self.stop()
+        self.scan()
+    self.stop()
 
     def go_left(self):
         self.turn_by_deg(-45)
