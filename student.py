@@ -81,7 +81,6 @@ class Piggy(PiggyParent):
                 self.fwd()
                 time.sleep(.01)
             self.stop()
-            self.shakeHeadInDisgust()
             self.scan()
         self.stop()
 
