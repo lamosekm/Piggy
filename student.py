@@ -78,6 +78,7 @@ class Piggy(PiggyParent):
         while self.read_distance() > 200:
             self.fwd()
             time.sleep(.01)
+            self.shakeHeadInDisgust()
         self.stop()
 
     def go_left(self):
@@ -203,7 +204,7 @@ class Piggy(PiggyParent):
             self.shakeHeadInDisgust()
             if self.cornerCount == 4:
                 self.escape()
-            self.scan()            
+           
             #traversal
             left_total = 0
             left_count = 0
