@@ -83,6 +83,7 @@ class Piggy(PiggyParent):
             self.stop()
             self.shakeHeadInDisgust()
             self.scan()
+        self.stop()
 
     def go_left(self):
         self.turn_by_deg(-45)
