@@ -55,7 +55,8 @@ class Piggy(PiggyParent):
                 "a": ("slightlyLeft", self.slightlyLeft),
                 "f": ("right", self.go_right),
                 "g": ("slighltyRight", self.slightlyRight),
-                "d": ("back", self.reverse)
+                "d": ("back", self.reverse),
+                "v": ("slither!", self.slither)
                 }
 
 
@@ -181,6 +182,48 @@ class Piggy(PiggyParent):
         #if I get to the end, this means I didn't find anything dangerous 
         return True
 
+
+    def slither(self):
+        """ practice a smooth veer """
+    # write down where we started
+    starting_direction = self.get_heading()
+    # start driving forward
+    self.set_motor_power(self.MOTOR_LEFT, self.LEFT_DEFAULT)
+    self.set_motor_power(self.MOTOR_RIGHT, self.RIGHT_DEFAULT)
+    self.fwd()
+    # throttle down the left motor
+    for power in range(self.LEFT_DEFAULT, 30, -10):
+        self.set_motor_power(self.MOTOR_LEFT, power)
+        time.sleep(.5)
+    # throttle up the left 
+    for power in range(30, self.LEFT_DEFAULT + 1, 10):
+        self.set_motor_power(self.MOTOR_LEFT, power)
+        time.sleep(.1)
+
+    # throttle down the right motor
+    for power in range(self.RIGHT_DEFAULT, 30, -10):
+        self.set_motor_power(self.MOTOR_RIGHT, power)
+        time.sleep(.5)
+    # throttle up the right 
+    for power in range(30, self.RIGHT_DEFAULT + 1, 10):
+        self.set_motor_power(self.MOTOR_RIGHT, power)
+        time.sleep(.1)
+
+    left_speed = self.LEFT_DEFAULT
+    right_speed = self.RIGHT_DEFAULT
+
+
+    # straighten out
+    while self.get_heading() != starting_direction:
+        # if I need to veer right
+        if self.get_heading() < starting_direction:
+            right_speed -= 10
+        # if I need to veer left
+        elif self.get_heading() > starting_direction:
+            let_speed -= 10
+        self.set_motor_power(self.MOTOR_LEFT, self.LEFT_DEFAULT)
+        self.set_motor_power(self.MOTOR_RIGHT, self.RIGHT_DEFAULT)
+        time.sleep(.1)
 
 
     def nav(self):
