@@ -213,17 +213,17 @@ class Piggy(PiggyParent):
         right_speed = self.RIGHT_DEFAULT
 
 
-    # straighten out
-    while self.get_heading() != starting_direction:
-        # if I need to veer right
-        if self.get_heading() < starting_direction:
-            right_speed -= 10
-        # if I need to veer left
-        elif self.get_heading() > starting_direction:
-            let_speed -= 10
-        self.set_motor_power(self.MOTOR_LEFT, self.LEFT_DEFAULT)
-        self.set_motor_power(self.MOTOR_RIGHT, self.RIGHT_DEFAULT)
-        time.sleep(.1)
+        # straighten out
+        while self.get_heading() != starting_direction:
+            # if I need to veer right
+            if self.get_heading() < starting_direction:
+                right_speed -= 10
+            # if I need to veer left
+            elif self.get_heading() > starting_direction:
+                let_speed -= 10
+            self.set_motor_power(self.MOTOR_LEFT, self.LEFT_DEFAULT)
+            self.set_motor_power(self.MOTOR_RIGHT, self.RIGHT_DEFAULT)
+            time.sleep(.1)
 
 
     def nav(self):
